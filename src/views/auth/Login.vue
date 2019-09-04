@@ -1,10 +1,21 @@
 <template>
     <div class="login">
         <section class="section">
-            <h1 class="section-title">Login</h1>
-            <input type="text" v-model="email" placeholder="Email"><br>
-            <input type="password" v-model="password" placeholder="Password"><br>
-            <button @click="login">Login</button>
+            <div class="container">
+                <h1 class="section-title">Login</h1>
+                
+                <div class="row justify-content-center">
+                    <div class="col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control" type="text" v-model="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" v-model="password" placeholder="Password">
+                    </div>
+                    <button class="btn btn-primary" @click="login">Login</button>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
 </template>

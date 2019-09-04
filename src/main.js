@@ -2,6 +2,15 @@ import Vue from 'vue'
 import firebase from 'firebase'
 import router from './router'
 
+// Plugins
+import 'bootstrap'
+import 'jquery'
+import 'popper.js'
+
+// Import Styles
+import './assets/scss/app.scss'
+
+
 import App from './App.vue'
 
 Vue.config.productionTip = false;

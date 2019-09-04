@@ -2,12 +2,21 @@
   "name": "vue-firebase-cms",
   "version": "0.1.0",
   "private": true,
+  "watches": {
+    "sass": "sass/**"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "build:scss": "node-sass --include-path scss src/assets/scss/app.scss public/css/main.css",
+    "dev": "npm run build:scss"
   },
   "dependencies": {
+    "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
+    "firebase": "^6.5.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
@@ -15,6 +24,7 @@
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
     "node-sass": "^4.9.0",
+    "rerun-script": "^0.6.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   }
