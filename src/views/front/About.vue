@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
-    <h1>About Us</h1>
-  </div>
+  <section class="section">
+    <div class="container">
+      <h1>About Us</h1>
+    </div>
+  </section>
 </template>
