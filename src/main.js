@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import firebase from 'firebase'
+import 'firebase/firestore'
 import router from './router'
 
 // Plugins
@@ -11,7 +12,7 @@ import 'popper.js'
 import './assets/scss/app.scss'
 
 
-import App from './App.vue'
+import App from './App.vue' 
 
 Vue.config.productionTip = false;
 
@@ -35,3 +36,5 @@ firebase.auth().onAuthStateChanged(() => {
     }).$mount('#app');
   }
 });
+
+export const db = firebase.firestore()
