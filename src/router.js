@@ -8,6 +8,7 @@ import Login from '@/views/auth/Login'
 // Frontend Views
 import Home from '@/views/front/Home'
 import About from '@/views/front/About'
+import Contact from '@/views/front/Contact'
 
 // Admin Views
 import Dashboard from '@/views/admin/Dashboard'
@@ -18,10 +19,12 @@ const router = new Router({
   mode: 'history',
 
   routes: [
+    // Default route
     {
       path: '*',
       redirect: '/'
     },
+    // Front routes
     {
       path: '/',
       name: 'home',
@@ -33,10 +36,16 @@ const router = new Router({
       component: About
     },
     {
+      path: '/contact',
+      name: 'contact',
+      component: Contact
+    },
+    {
       path: '/admin-login',
       name: 'login',
       component: Login
     },
+    // Auth routes
     {
       path: '/dashboard',
       name: 'dashboard',
