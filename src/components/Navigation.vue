@@ -9,7 +9,7 @@
                 <router-link v-if="!isLoggedIn" class="nav-item nav-link active" to="/">Home <span class="sr-only">(current)</span></router-link>
                 <router-link v-if="!isLoggedIn" class="nav-item nav-link" to="/about">About</router-link>
                 <router-link v-if="!isLoggedIn" class="nav-item nav-link" to="/contact">Contact</router-link>
-                <router-link v-if="isLoggedIn" class="nav-item nav-link" to="/dashboard">Dashboard</router-link>
+                <router-link v-if="isLoggedIn" class="nav-item nav-link" to="/admin/messages">Messagesl</router-link>
                 <button v-if="isLoggedIn" class="btn btn-secondary" @click="logout">Log Out</button>
             </div>
         </div>
