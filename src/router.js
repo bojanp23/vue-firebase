@@ -11,7 +11,9 @@ import About from '@/views/front/About'
 import Contact from '@/views/front/Contact'
 
 // Admin Views
-import Dashboard from '@/views/admin/Dashboard'
+import AdminPanel from '@/views/admin/AdminPanel'
+import AllMessages from '@/views/admin/messages/AllMessages'
+import ViewMessage from '@/views/admin/messages/ViewMessage'
 
 Vue.use(Router);
 
@@ -47,12 +49,27 @@ const router = new Router({
     },
     // Auth routes
     {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: Dashboard,
+      path: '/admin',
+      name: 'admin',
+      component: AdminPanel,
       meta: {
         requiresAuth: true
-      }
+      },
+      children: [
+        // List all messages
+        {
+          path: 'messages',
+          name: 'messages',
+          component: AllMessages,
+          
+        },
+        // Lists single message
+        {
+          path: 'message/:id',
+          name: 'view-message',
+          component: ViewMessage
+        },
+      ]
     },
   ]
 });
@@ -62,7 +79,7 @@ router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) next('admin-login');
-  else if (!requiresAuth && currentUser) next('dashboard');
+  else if (!requiresAuth && currentUser) next('admin-panel');
   else next();
 });
 
